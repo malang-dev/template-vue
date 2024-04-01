@@ -38,9 +38,9 @@ If you have a suggestion that would make this better, please fork the repo and c
 ## Releasing
 
 1. Go to [Publish Release](https://github.com/malang-dev/template-vue/actions/workflows/publish-release.yaml) page, click Run workflow
-3. Fill the vendor version and then run the flow
+2. Fill the vendor version and then run the flow
 3. GitHub Actions will take care of the rest
-   
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/malang-dev/template-vue/blob/master/LICENSE.md) file for details.

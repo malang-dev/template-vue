@@ -3,7 +3,7 @@
   "editor.guides.bracketPairs": "active",
   "files.insertFinalNewline": true,
   "files.eol": "\n",
-  "eslint.validate": ["javascript", "typescript"],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue"],
   "[json][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -14,6 +14,9 @@
       "source.fixAll.eslint": "explicit",
       "source.fixAll.eslint.format": "explicit"
     }
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
   },
   "conventionalCommits.scopes": ["code-format", "workflows", "deps"]
 }

@@ -1,10 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     // build es2022 modules by default
     "target": "ES2022",
     "module": "ES2022",
-    "lib": ["ES2022"],
+    // "lib": ["ES2022"],
     "types": ["node"],
     "moduleResolution": "node",
     "importHelpers": true,
@@ -19,10 +20,10 @@
     // produce consistent output across all platforms
     "newLine": "lf",
     // produce .js.map, .d.ts and .d.ts.map files when emit is enabled
-    "noEmit": false,
-    "declaration": true,
+    "noEmit": true,
+    "declaration": false,
     "declarationMap": false,
-    "sourceMap": true,
+    "sourceMap": false,
     // recommended for faster compilation
     "skipLibCheck": true,
     // be as strict as possible, but no stricter
