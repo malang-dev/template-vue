@@ -1,15 +1,15 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <a href="https://github.com/malang-dev/template-typescript">
-    <img src="https://svgshare.com/i/14V6.svg" alt="Typescript" width="150px">
+  <a href="https://github.com/malang-dev/template-vue">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vue.png" alt="Vue" width="150px">
   </a>
-  <h2 align="center">@malang-dev/template-typescript</h2>
+  <h2 align="center">@malang-dev/template-vue</h2>
   <div align="center">
-    <p align="center">Template repository for new TypeScript projects</p>
+    <p align="center">Template repository for new Vue projects</p>
     <div>
-        <a href="https://github.com/malang-dev/template-typescript/releases/"><img src="https://img.shields.io/github/release/malang-dev/template-typescript?include_prereleases=&sort=semver&color=blue" alt="GitHub release"></a>
-        <a href="https://github.com/malang-dev/template-typescript#license"><img src="https://img.shields.io/badge/License-MIT-blue" alt="License"></a>
+        <a href="https://github.com/malang-dev/template-vue/releases/"><img src="https://img.shields.io/github/release/malang-dev/template-vue?include_prereleases=&sort=semver&color=blue" alt="GitHub release"></a>
+        <a href="https://github.com/malang-dev/template-vue#license"><img src="https://img.shields.io/badge/License-MIT-blue" alt="License"></a>
     </div>
   </div>
 </div>
@@ -37,13 +37,13 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## Releasing
 
-1. Go to [Publish Release](https://github.com/malang-dev/template-typescript/actions/workflows/publish-release.yaml) page, click Run workflow
+1. Go to [Publish Release](https://github.com/malang-dev/template-vue/actions/workflows/publish-release.yaml) page, click Run workflow
 3. Fill the vendor version and then run the flow
 3. GitHub Actions will take care of the rest
    
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/malang-dev/template-typescript/blob/master/LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/malang-dev/template-vue/blob/master/LICENSE.md) file for details.
 
 ## Acknowledgments
 
