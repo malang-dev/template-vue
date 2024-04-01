@@ -15,5 +15,5 @@
       "source.fixAll.eslint.format": "explicit"
     }
   },
-  "conventionalCommits.scopes": ["code-format", "workflows"]
+  "conventionalCommits.scopes": ["code-format", "workflows", "deps"]
 }
