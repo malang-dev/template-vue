@@ -8,8 +8,8 @@ on:
     branches: "*"
 
 jobs:
-  all:
-    name: "Run CI"
+  unit:
+    name: "Unit testing"
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,3 +24,20 @@ jobs:
 
       - run: yarn install --frozen-lockfile
       - run: yarn run test:unit
+
+  e2e:
+    name: "E2E testing"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn run test:e2e
