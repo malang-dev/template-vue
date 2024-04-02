@@ -23,9 +23,8 @@
     "build-only": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "test:e2e": "run-s \"playwright:install\" \"playwright:test\"",
-    "playwright:install": "playwright install",
-    "playwright:test": "playwright test",
+    "test:e2e": "playwright test",
+    "playwright:install": "playwright install --with-deps",
     "lint": "eslint \"src/**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}\" --fix",
     "lint-staged": "lint-staged",
     "type-check": "vue-tsc --build --force"
