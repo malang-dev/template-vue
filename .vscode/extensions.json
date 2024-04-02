@@ -5,6 +5,7 @@
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "vivaxy.vscode-conventional-commits",
-    "Vue.volar"
+    "Vue.volar",
+    "sdras.vue-vscode-snippets"
   ]
 }
