@@ -23,7 +23,7 @@
     "build-only": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "test:e2e": "run-p \"playwright:install\" \"playwright:test\"",
+    "test:e2e": "run-s \"playwright:install\" \"playwright:test\"",
     "playwright:install": "playwright install",
     "playwright:test": "playwright test",
     "lint": "eslint \"src/**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}\" --fix",
