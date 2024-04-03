@@ -58,10 +58,6 @@
     "vitest": "^1.4.0",
     "vue-tsc": "^2.0.7"
   },
-  "resolutions": {
-    "wrap-ansi": "7.0.0",
-    "string-width": "4.2.3"
-  },
   "lint-staged": {
     "src/**/*.{ts|test.ts}": [
       "eslint --max-warnings 0 \"src/**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
