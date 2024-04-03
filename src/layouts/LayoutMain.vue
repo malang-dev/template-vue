@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "../components/HelloWorld.vue";
 import LanguageToggle from "../components/LanguageToggle.vue";
+import DarkLightToggle from "../components/DarkLightToggle.vue";
 </script>
 
 <template>
@@ -19,6 +20,7 @@ import LanguageToggle from "../components/LanguageToggle.vue";
         </nav>
 
         <LanguageToggle />
+        <DarkLightToggle />
       </div>
     </header>
 

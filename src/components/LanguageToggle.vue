@@ -19,7 +19,7 @@ function onChange(event: Event) {
 <style scoped>
 select {
   padding: 7px 40px 7px 12px;
-  border: 1px solid #e8eaed;
+  border: 1px solid var(--color-border);
   border-radius: 5px;
   background: #fff;
   box-shadow: 0 1px 3px -2px #9098a9;

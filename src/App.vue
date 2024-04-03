@@ -6,6 +6,7 @@ import { onMounted } from "vue";
 const globalStore = useGlobalStore();
 onMounted(function () {
   globalStore.loadLocale();
+  globalStore.loadTheme();
 });
 </script>
 
