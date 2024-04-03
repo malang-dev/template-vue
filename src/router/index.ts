@@ -18,6 +18,13 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       children: [{ path: "", name: "about", component: () => import("../views/AboutView.vue") }],
     },
+    {
+      path: "/guestbook",
+      component: LayoutMain,
+      children: [
+        { path: "", name: "guestbook", component: () => import("../views/GuestbookView.vue") },
+      ],
+    },
   ],
 });
 

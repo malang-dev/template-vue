@@ -2,8 +2,9 @@
 import { useGlobalStore } from "../stores/global";
 
 const globalStore = useGlobalStore();
-function onChange(event) {
-  const locale = event.target.value;
+function onChange(event: Event) {
+  const target = event.target as HTMLSelectElement;
+  const locale = target.value;
   globalStore.loadLocale(locale);
 }
 </script>

@@ -15,6 +15,7 @@ import LanguageToggle from "../components/LanguageToggle.vue";
         <nav>
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/guestbook">Guestbook</RouterLink>
         </nav>
 
         <LanguageToggle />
