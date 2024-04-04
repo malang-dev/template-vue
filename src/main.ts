@@ -14,6 +14,7 @@ const i18n = createI18n({
   locale: localStorage.getItem("locale") || "en",
 });
 
+axios.defaults.baseURL = import.meta.env.BASE_URL;
 window.storage = localStorage;
 window.axios = axios;
 window.i18n = i18n;
