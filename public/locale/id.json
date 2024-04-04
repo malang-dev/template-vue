@@ -1,7 +1,25 @@
 {
+  "menu": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "guestbook": "Buku Tamu"
+  },
   "hello_world": {
     "title": "Halo Dunia!",
     "successfully_created": "Anda telah berhasil membuat proyek dengan",
     "whats_next": "Apa selanjutnya?"
+  },
+  "home": {
+    "documentation": "Dokumentasi",
+    "tooling": "Perkakas",
+    "ecosystem": "Ekosistem",
+    "community": "Komunitas",
+    "support": "Dukung Vue"
+  },
+  "about": {
+    "description": "Ini adalah halaman tentang"
+  },
+  "guestbook": {
+    "name": "Buku Tamu"
   }
 }

@@ -14,9 +14,9 @@ import DarkLightToggle from "../components/DarkLightToggle.vue";
         <HelloWorld :msg="$t('hello_world.title')" />
 
         <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
-          <RouterLink to="/guestbook">Guestbook</RouterLink>
+          <RouterLink to="/">{{ $t("menu.home") }}</RouterLink>
+          <RouterLink to="/about">{{ $t("menu.about") }}</RouterLink>
+          <RouterLink to="/guestbook">{{ $t("menu.guestbook") }}</RouterLink>
         </nav>
 
         <LanguageToggle />

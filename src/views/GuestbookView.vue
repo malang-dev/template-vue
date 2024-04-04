@@ -24,7 +24,7 @@ function resetForm() {
 
 <template>
   <div class="pages">
-    <h3>GuestBook</h3>
+    <h3>{{ $t("guestbook.name") }}</h3>
     <p>
       Here is an example where I showcase a simple form for guestbook entries. For the code, you can
       see in
