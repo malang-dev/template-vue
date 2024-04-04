@@ -14,7 +14,8 @@ jobs:
         uses: actions/checkout@v4
 
       - run: yarn install --frozen-lockfile
-      - run: BASE_URL=/template-vue yarn build
+      - run: cp .env.github-pages .env && cat .env
+      - run: yarn build
 
       - name: Upload to artifacts
         uses: actions/upload-artifact@v4
