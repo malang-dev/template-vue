@@ -19,12 +19,12 @@ const props = withDefaults(defineProps<HeadingProps>(), {
 });
 
 const textSizes: Record<string, string> = {
-  h1: "text-5xl font-extrabold",
-  h2: "text-4xl font-bold",
-  h3: "text-3xl font-bold",
-  h4: "text-2xl font-bold",
-  h5: "text-xl font-bold",
-  h6: "text-lg font-bold",
+  h1: "text-5xl",
+  h2: "text-4xl",
+  h3: "text-3xl",
+  h4: "text-2xl",
+  h5: "text-xl",
+  h6: "text-lg",
 };
 const attrs = useAttrs();
 const headingClasses = twMerge(

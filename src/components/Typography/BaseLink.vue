@@ -1,17 +1,19 @@
 <script setup lang="ts">
+import { RouterLink } from "vue-router";
+
 interface LinkProps {
-  href?: string;
+  to?: string;
   color?: string;
 }
 
 const props = withDefaults(defineProps<LinkProps>(), {
-  href: "",
+  to: "/",
   color: "text-primary-600 dark:text-primary-500",
 });
 </script>
 
 <template>
-  <a :href="href" :class="[props.color, 'inline-flex items-center hover:underline']">
+  <RouterLink :to="to" :class="[props.color, 'inline-flex items-center hover:underline']">
     <slot></slot>
-  </a>
+  </RouterLink>
 </template>
