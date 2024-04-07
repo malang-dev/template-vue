@@ -1,4 +1,4 @@
-import "./assets/main.css";
+import "./assets/tailwind.css";
 
 import axios from "axios";
 import { createPinia } from "pinia";

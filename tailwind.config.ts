@@ -2,11 +2,11 @@ import type { Config } from "tailwindcss";
 
 export default {
   corePlugins: {
-    preflight: false,
+    // Reset css. default: true
+    preflight: true,
   },
+  darkMode: ["selector"],
   content: ["./index.html", "./src/**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}"],
-  theme: {
-    extend: {},
-  },
+  theme: {},
   plugins: [],
 } satisfies Config;
