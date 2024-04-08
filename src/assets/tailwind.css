@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    @apply font-sans;
-  }
+html {
+  @apply font-sans;
+  @apply dark:bg-eerie-black;
+}
+
+a {
+  @apply text-emerald-500;
+}
+
+a:hover {
+  @apply bg-green-munsell;  
 }

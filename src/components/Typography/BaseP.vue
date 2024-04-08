@@ -1,9 +1,20 @@
 <script setup lang="ts">
-const defaultClasses = "mb-3 last:mb-0 text-gray-900 dark:text-white leading-normal";
+import { twMerge } from "tailwind-merge";
+
+interface PProps {
+  color?: string;
+}
+
+const props = withDefaults(defineProps<PProps>(), {
+  color: "text-gray-900 dark:text-white",
+});
+
+const defaultClasses = "mb-3 last:mb-0 leading-normal";
+const componentClasses = twMerge(defaultClasses, props.color);
 </script>
 
 <template>
-  <p :class="defaultClasses">
+  <p :class="componentClasses">
     <slot></slot>
   </p>
 </template>

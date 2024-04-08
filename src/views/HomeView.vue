@@ -1,134 +1,86 @@
 <script setup lang="ts">
-import BaseA from "../components/Typography/BaseA.vue";
-import BaseAlert from "../components/Alert/BaseAlert.vue";
-import BaseAlertFullWidth from "../components/Alert/BaseAlertFullWidth.vue";
-import BaseButton from "../components/Button/BaseButton.vue";
-import BaseButtonGroup from "../components/Button/BaseButtonGroup.vue";
-import BaseHeading from "../components/Typography/BaseHeading.vue";
-import BaseImg from "../components/Typography/BaseImg.vue";
-import BaseP from "../components/Typography/BaseP.vue";
 import BaseIcon from "../components/Icons/BaseIcon.vue";
-import BaseButtonGroupItem from "../components/Button/BaseButtonGroupItem.vue";
-import BaseTable from "../components/Table/BaseTable.vue";
-import BaseTableHead from "../components/Table/BaseTableHead.vue";
-import BaseTableBody from "../components/Table/BaseTableBody.vue";
-import BaseTableRow from "../components/Table/BaseTableRow.vue";
-import BaseTableHeadCell from "../components/Table/BaseTableHeadCell.vue";
-import BaseTableCell from "../components/Table/BaseTableCell.vue";
+import OnboardItem from "../components/OnboardItem.vue";
 </script>
 
 <template>
-  <main>
-    <BaseHeading tag="h1">Meraki UI</BaseHeading>
+  <main class="flex place-items-center">
+    <div class="welcome flex flex-col relative">
+      <OnboardItem title="Documentation">
+        <template #icon>
+          <BaseIcon name="IconDocumentation" class="text-gray-400" />
+        </template>
 
-    <BaseHeading tag="h1">Typography H1</BaseHeading>
-    <BaseHeading tag="h2">Typography H2</BaseHeading>
-    <BaseHeading tag="h3">Typography H3</BaseHeading>
-    <BaseHeading tag="h4">Typography H4</BaseHeading>
-    <BaseHeading tag="h5">Typography H5</BaseHeading>
-    <BaseHeading tag="h6">Typography H6</BaseHeading>
+        Vue’s <a href="https://vuejs.org/">official documentation</a> provides you with all
+        information you need to get started.
+      </OnboardItem>
 
-    <BaseP>
-      Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau
-      typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an
-    </BaseP>
+      <OnboardItem title="Tooling">
+        <template #icon>
+          <BaseIcon name="IconTooling" class="text-gray-400 !w-6" />
+        </template>
 
-    <BaseImg src="https://picsum.photos/seed/picsum/200/300" />
+        This project is served and bundled with
+        <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>.
+        The recommended IDE setup is
+        <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
+        <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>.
+        If you need to test your components and web pages, check out
+        <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
+        <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
+          >Cypress Component Testing</a
+        >. <br />
+        More instructions are available in <code>README.md</code>.
+      </OnboardItem>
 
-    <!-- By default, the icon and title will adjust according to the type -->
-    <BaseAlert type="success" title="Success" description="Place your alert description in here">
-      <template #icon><BaseIcon name="IconAlertSuccess" /> </template>
-    </BaseAlert>
+      <OnboardItem title="Ecosystem">
+        <template #icon>
+          <BaseIcon name="IconEcosystem" class="text-gray-400" />
+        </template>
 
-    <!-- By default, the icon will adjust according to the type -->
-    <BaseAlertFullWidth type="success" description="Place your alert description in here">
-      <template #icon><BaseIcon name="IconAlertSuccess" /></template>
-    </BaseAlertFullWidth>
+        Get official tools and libraries for your project:
+        <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
+        <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>,
+        <a href="https://test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a>,
+        and
+        <a href="https://github.com/vuejs/devtools" target="_blank" rel="noopener">Vue Dev Tools</a
+        >. If you need more resources, we suggest paying
+        <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener"
+          >Awesome Vue</a
+        >
+        a visit.
+      </OnboardItem>
 
-    <div class="flex w-full">
-      <div class="mx-auto text-center">
-        <BaseButton class="my-1" size="xl">
-          <BaseIcon name="IconRefresh" /> <span>Button xl</span>
-        </BaseButton>
-        <BaseButton class="my-1" size="lg">
-          <BaseIcon name="IconRefresh" /> <span>Button lg</span>
-        </BaseButton>
-        <BaseButton class="my-1" size="md">
-          <BaseIcon name="IconRefresh" /> <span>Button md</span>
-        </BaseButton>
-        <BaseButton class="my-1" size="sm">
-          <BaseIcon name="IconRefresh" /> <span>Button sm</span>
-        </BaseButton>
-        <BaseButton class="my-1" size="xs">
-          <BaseIcon name="IconRefresh" /> <span>Button xs</span>
-        </BaseButton>
-      </div>
+      <OnboardItem title="Community">
+        <template #icon>
+          <BaseIcon name="IconCommunity" class="text-gray-400" />
+        </template>
+
+        Got stuck? Ask your question on Vue Land, our official Discord server, or StackOverflow. You
+        should also subscribe to our mailing list and follow the official @vuejs twitter account for
+        latest news in the Vue world.
+      </OnboardItem>
+
+      <OnboardItem title="Support Vue">
+        <template #icon>
+          <BaseIcon name="IconSupport" class="text-gray-400" />
+        </template>
+
+        As an independent project, Vue relies on community backing for its sustainability. You can
+        help us by becoming a sponsor.
+      </OnboardItem>
     </div>
-
-    <BaseButtonGroup>
-      <BaseButtonGroupItem>
-        <BaseIcon name="IconUpload" /> <span>Upload</span>
-      </BaseButtonGroupItem>
-      <BaseButtonGroupItem> <BaseIcon name="IconDrift" /> <span>Drift</span> </BaseButtonGroupItem>
-      <BaseButtonGroupItem> <BaseIcon name="IconView" /> <span>Views</span> </BaseButtonGroupItem>
-    </BaseButtonGroup>
-
-    <BaseA href="https://google.com">Google</BaseA>
-
-    <BaseTable>
-      <BaseTableHead>
-        <BaseTableRow>
-          <BaseTableHeadCell>Name</BaseTableHeadCell>
-          <BaseTableHeadCell>Status</BaseTableHeadCell>
-          <BaseTableHeadCell>Role</BaseTableHeadCell>
-          <BaseTableHeadCell>Email Address</BaseTableHeadCell>
-          <BaseTableHeadCell></BaseTableHeadCell>
-        </BaseTableRow>
-      </BaseTableHead>
-      <BaseTableBody>
-        <BaseTableRow>
-          <BaseTableCell>User1</BaseTableCell>
-          <BaseTableCell>Active</BaseTableCell>
-          <BaseTableCell>Admin</BaseTableCell>
-          <BaseTableCell>user1@example.com</BaseTableCell>
-          <BaseTableCell class="flex">
-            <BaseButton class="text-gray-600" color="bg-none">
-              <BaseIcon name="IconDrift" />
-            </BaseButton>
-            <BaseButton class="text-gray-600" color="bg-none">
-              <BaseIcon name="IconView" />
-            </BaseButton>
-          </BaseTableCell>
-        </BaseTableRow>
-        <BaseTableRow>
-          <BaseTableCell>User2</BaseTableCell>
-          <BaseTableCell>Active</BaseTableCell>
-          <BaseTableCell>Admin</BaseTableCell>
-          <BaseTableCell>user2@example.com</BaseTableCell>
-          <BaseTableCell class="flex">
-            <BaseButton class="text-gray-600" color="bg-none">
-              <BaseIcon name="IconDrift" />
-            </BaseButton>
-            <BaseButton class="text-gray-600" color="bg-none">
-              <BaseIcon name="IconView" />
-            </BaseButton>
-          </BaseTableCell>
-        </BaseTableRow>
-        <BaseTableRow>
-          <BaseTableCell>User3</BaseTableCell>
-          <BaseTableCell>Active</BaseTableCell>
-          <BaseTableCell>Admin</BaseTableCell>
-          <BaseTableCell>user3@example.com</BaseTableCell>
-          <BaseTableCell class="flex">
-            <BaseButton class="text-gray-600" color="bg-none">
-              <BaseIcon name="IconDrift" />
-            </BaseButton>
-            <BaseButton class="text-gray-600" color="bg-none">
-              <BaseIcon name="IconView" />
-            </BaseButton>
-          </BaseTableCell>
-        </BaseTableRow>
-      </BaseTableBody>
-    </BaseTable>
   </main>
 </template>
+
+<style scoped>
+.welcome::before {
+  @apply absolute;
+  @apply border-[1px];
+  @apply border-gray-200;
+  content: "";
+  height: 85%;
+  left: -4.5rem;
+  top: 3.75rem;
+}
+</style>
