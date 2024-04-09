@@ -6,7 +6,7 @@ import OnboardItem from "../components/OnboardItem.vue";
 <template>
   <main class="flex place-items-center">
     <div class="welcome flex flex-col relative">
-      <OnboardItem title="Documentation">
+      <OnboardItem :title="$t('onboard.documentation')">
         <template #icon>
           <BaseIcon name="IconDocumentation" class="text-gray-400" />
         </template>
@@ -15,7 +15,7 @@ import OnboardItem from "../components/OnboardItem.vue";
         information you need to get started.
       </OnboardItem>
 
-      <OnboardItem title="Tooling">
+      <OnboardItem :title="$t('onboard.tooling')">
         <template #icon>
           <BaseIcon name="IconTooling" class="text-gray-400 !w-6" />
         </template>
@@ -33,7 +33,7 @@ import OnboardItem from "../components/OnboardItem.vue";
         More instructions are available in <code>README.md</code>.
       </OnboardItem>
 
-      <OnboardItem title="Ecosystem">
+      <OnboardItem :title="$t('onboard.ecosystem')">
         <template #icon>
           <BaseIcon name="IconEcosystem" class="text-gray-400" />
         </template>
@@ -51,7 +51,7 @@ import OnboardItem from "../components/OnboardItem.vue";
         a visit.
       </OnboardItem>
 
-      <OnboardItem title="Community">
+      <OnboardItem :title="$t('onboard.community')">
         <template #icon>
           <BaseIcon name="IconCommunity" class="text-gray-400" />
         </template>
@@ -61,7 +61,7 @@ import OnboardItem from "../components/OnboardItem.vue";
         latest news in the Vue world.
       </OnboardItem>
 
-      <OnboardItem title="Support Vue">
+      <OnboardItem :title="$t('onboard.support')">
         <template #icon>
           <BaseIcon name="IconSupport" class="text-gray-400" />
         </template>

@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { IsEmpty } from "../utils/is-empty";
 
 interface Locale {
   code: string;
@@ -50,7 +51,7 @@ export const useGlobalStore = () => {
           return Promise.reject("Invalid locale code. Please choose another language");
         }
 
-        if (i18n.messages[localeCode]) {
+        if (!IsEmpty(i18n.messages[localeCode])) {
           if (i18n.locale !== localeCode) {
             this.setI18nHtmlAttribute(localeCode);
           }

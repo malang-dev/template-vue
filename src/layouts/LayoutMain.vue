@@ -12,19 +12,19 @@ import DarkLightToggle from "../components/DarkLightToggle.vue";
       <img alt="Vue logo" class="logo mr-4" src="../assets/logo.svg" width="100" height="100" />
 
       <div class="flex flex-col [&>*]:my-2">
-        <BaseHeading tag="h1" class="text-emerald-500 dark:text-emerald-500"
-          >Hello World!</BaseHeading
-        >
+        <BaseHeading tag="h1" class="text-emerald-500 dark:text-emerald-500">
+          {{ $t("hello_world.title") }}
+        </BaseHeading>
         <BaseHeading tag="h5" class="dark:text-gray-400">
-          You’ve successfully created a project with <br />
-          <a href="https://vitejs.dev/">Vite</a> + <a href="https://vuejs.org/">Vue 3</a>. What's
-          next?
+          {{ $t("hello_world.successfully_created") }} <br />
+          <a href="https://vitejs.dev/">Vite</a> + <a href="https://vuejs.org/">Vue 3</a>.
+          {{ $t("hello_world.whats_next") }}
         </BaseHeading>
 
         <nav class="-ml-2">
-          <BaseLink to="/">Home</BaseLink>
-          <BaseLink to="/about">About</BaseLink>
-          <BaseLink to="/guestbook">Guestbook</BaseLink>
+          <BaseLink to="/">{{ $t("menu.home") }}</BaseLink>
+          <BaseLink to="/components">{{ $t("menu.components") }}</BaseLink>
+          <BaseLink to="/guestbook">{{ $t("menu.guestbook") }}</BaseLink>
         </nav>
 
         <div class="grid grid-cols-5">

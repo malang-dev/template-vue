@@ -1,7 +1,7 @@
 {
   "menu": {
     "home": "Home",
-    "about": "About",
+    "components": "Components",
     "guestbook": "Guestbook"
   },
   "hello_world": {
@@ -9,7 +9,7 @@
     "successfully_created": "You’ve successfully created a project with",
     "whats_next": "What's next?"
   },
-  "home": {
+  "onboard": {
     "documentation": "Documentation",
     "tooling": "Tooling",
     "ecosystem": "Ecosystem",
