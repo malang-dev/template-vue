@@ -1,6 +1,7 @@
 <script setup>
 import { NextData } from "../utils/next-data";
 import { useGlobalStore } from "../stores/global";
+import BaseButton from "./Button/BaseButton.vue";
 
 const globalStore = useGlobalStore();
 function onThemeChange() {
@@ -10,7 +11,7 @@ function onThemeChange() {
 </script>
 
 <template>
-  <button @click="onThemeChange">
+  <BaseButton @click="onThemeChange" color="bg-emerald-500 text-white">
     <!-- Download SVG icon from http://tabler-icons.io/i/moon -->
     <svg
       v-if="globalStore.theme === 'light'"
@@ -50,11 +51,11 @@ function onThemeChange() {
         d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
       ></path>
     </svg>
-  </button>
+  </BaseButton>
 </template>
 
 <style scoped>
 button {
-  margin-left: 10px;
+  @apply ml-4;
 }
 </style>

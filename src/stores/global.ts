@@ -1,16 +1,22 @@
 import { defineStore } from "pinia";
+import { IsEmpty } from "../utils/is-empty";
+
+interface Locale {
+  code: string;
+  name: string;
+}
 
 interface State {
   theme: string;
   themeList: string[];
-  locale: string;
-  localeList: any;
+  locale: Locale;
+  localeList: Locale[];
 }
 
 export const useGlobalStore = () => {
   const storage = window.storage;
   const axios = window.axios;
-  const i18n = window.i18n;
+  const i18n = window.i18n.global;
 
   const defaultTheme = storage.getItem("theme") || "dark";
   return defineStore({
@@ -19,7 +25,16 @@ export const useGlobalStore = () => {
       theme: defaultTheme,
       themeList: ["dark", "light"],
       locale: null,
-      localeList: [],
+      localeList: [
+        {
+          code: "en",
+          name: "English",
+        },
+        {
+          code: "id",
+          name: "Bahasa Indonesia",
+        },
+      ],
     }),
     actions: {
       loadTheme(theme?: string) {
@@ -28,35 +43,38 @@ export const useGlobalStore = () => {
         document.querySelector("html").setAttribute("data-theme", this.theme);
       },
 
-      async loadLocale($locale?: string) {
-        if (!$locale) $locale = i18n.global.locale as string;
-        this.locale = $locale;
+      async loadLocale(localeCode?: string) {
+        if (!localeCode) localeCode = i18n.locale as string;
 
-        if (this.localeList.includes($locale)) {
-          if (i18n.global.locale !== $locale) {
-            this.setI18nHtmlAttribut($locale);
+        this.locale = this.localeList.find((x) => x.code === localeCode);
+        if (!this.locale) {
+          return Promise.reject("Invalid locale code. Please choose another language");
+        }
+
+        if (!IsEmpty(i18n.messages[localeCode])) {
+          if (i18n.locale !== localeCode) {
+            this.setI18nHtmlAttribute(localeCode);
           }
           return Promise.resolve();
         }
-        return axios.get(`/locale/${$locale}.json`).then(({ data }) => {
-          this.localeList.push($locale);
-          this.setI18nHtmlAttribut($locale);
 
-          i18n.global.setLocaleMessage($locale, data);
+        return axios.get(`/locale/${localeCode}.json`).then(({ data }) => {
+          this.setI18nHtmlAttribute(localeCode);
+          i18n.setLocaleMessage(localeCode, data);
         });
       },
 
-      setI18nHtmlAttribut($locale: string) {
+      setI18nHtmlAttribute(localeCode: string) {
         const storage = window.storage;
         const axios = window.axios;
         const i18n = window.i18n;
 
-        i18n.global.locale = $locale;
-        storage.setItem("locale", $locale);
+        i18n.global.locale = localeCode;
+        storage.setItem("locale", localeCode);
 
-        axios.defaults.headers.common["Accept-Language"] = $locale;
-        document.querySelector("html").setAttribute("lang", $locale);
-        return $locale;
+        axios.defaults.headers.common["Accept-Language"] = localeCode;
+        document.querySelector("html").setAttribute("lang", localeCode);
+        return localeCode;
       },
     },
   })();

@@ -6,6 +6,7 @@
     "dbaeumer.vscode-eslint",
     "vivaxy.vscode-conventional-commits",
     "Vue.volar",
-    "sdras.vue-vscode-snippets"
+    "sdras.vue-vscode-snippets",
+    "bradlc.vscode-tailwindcss"
   ]
 }

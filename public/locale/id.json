@@ -1,7 +1,7 @@
 {
   "menu": {
     "home": "Beranda",
-    "about": "Tentang",
+    "components": "Komponen",
     "guestbook": "Buku Tamu"
   },
   "hello_world": {
@@ -9,7 +9,7 @@
     "successfully_created": "Anda telah berhasil membuat proyek dengan",
     "whats_next": "Apa selanjutnya?"
   },
-  "home": {
+  "onboard": {
     "documentation": "Dokumentasi",
     "tooling": "Perkakas",
     "ecosystem": "Ekosistem",

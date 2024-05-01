@@ -1,26 +1,36 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "../components/HelloWorld.vue";
+import BaseLink from "../components/Typography/BaseLink.vue";
+import BaseHeading from "../components/Typography/BaseHeading.vue";
+import { RouterView } from "vue-router";
 import LanguageToggle from "../components/LanguageToggle.vue";
 import DarkLightToggle from "../components/DarkLightToggle.vue";
 </script>
 
 <template>
-  <div class="container">
-    <header>
-      <img alt="Vue logo" class="logo" src="../assets/logo.svg" width="125" height="125" />
+  <div class="container mx-auto grid grid-cols-2 h-screen">
+    <header class="flex place-items-center">
+      <img alt="Vue logo" class="logo mr-4" src="../assets/logo.svg" width="100" height="100" />
 
-      <div class="wrapper">
-        <HelloWorld :msg="$t('hello_world.title')" />
+      <div class="flex flex-col [&>*]:my-2 greetings">
+        <BaseHeading tag="h1" class="text-emerald-500 dark:text-emerald-500">
+          {{ $t("hello_world.title") }}
+        </BaseHeading>
+        <BaseHeading tag="h5" class="dark:text-gray-400">
+          {{ $t("hello_world.successfully_created") }} <br />
+          <a href="https://vitejs.dev/">Vite</a> + <a href="https://vuejs.org/">Vue 3</a>.
+          {{ $t("hello_world.whats_next") }}
+        </BaseHeading>
 
-        <nav>
-          <RouterLink to="/">{{ $t("menu.home") }}</RouterLink>
-          <RouterLink to="/about">{{ $t("menu.about") }}</RouterLink>
-          <RouterLink to="/guestbook">{{ $t("menu.guestbook") }}</RouterLink>
+        <nav class="-ml-2">
+          <BaseLink to="/">{{ $t("menu.home") }}</BaseLink>
+          <BaseLink to="/components">{{ $t("menu.components") }}</BaseLink>
+          <BaseLink to="/guestbook">{{ $t("menu.guestbook") }}</BaseLink>
         </nav>
 
-        <LanguageToggle />
-        <DarkLightToggle />
+        <div class="grid grid-cols-5">
+          <LanguageToggle class="col-span-4" />
+          <DarkLightToggle />
+        </div>
       </div>
     </header>
 
@@ -29,65 +39,12 @@ import DarkLightToggle from "../components/DarkLightToggle.vue";
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+nav > a {
+  @apply px-3;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+nav > a:not(:last-child) {
+  @apply border-r-2;
+  @apply border-gray-200;
 }
 </style>
