@@ -15,7 +15,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "prebuild": "rimraf dist",
     "format": "prettier --write .",
     "dev": "vite",
