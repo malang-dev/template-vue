@@ -17,6 +17,7 @@ export default {
       colors: {
         "green-munsell": "#00BD7E33",
         "eerie-black": "#181818",
+        charcoal: "#333366",
       },
     },
   },

@@ -22,7 +22,7 @@ const buttonSizeClasses: Record<ButtonSize, string> = {
 };
 
 const defaultClasses =
-  "flex items-center font-medium tracking-wide capitalize transition-colors duration-300 transform rounded-lg";
+  "flex items-center justify-center font-medium tracking-wide capitalize transition-colors duration-300 transform rounded-lg";
 const componentClasses = twMerge(defaultClasses, buttonSizeClasses[props.size], props.color);
 </script>
 
