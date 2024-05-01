@@ -4,12 +4,13 @@ import BaseHeading from "../components/Typography/BaseHeading.vue";
 import { RouterView } from "vue-router";
 import LanguageToggle from "../components/LanguageToggle.vue";
 import DarkLightToggle from "../components/DarkLightToggle.vue";
+import { baseURL } from "../utils/baseurl";
 </script>
 
 <template>
   <div class="container mx-auto grid grid-cols-2 h-screen">
     <header class="flex place-items-center">
-      <img alt="Vue logo" class="logo mr-4" src="../assets/logo.svg" width="100" height="100" />
+      <img alt="Vue logo" class="logo mr-4" :src="baseURL('logo.svg')" width="100" height="100" />
 
       <div class="flex flex-col [&>*]:my-2 greetings">
         <BaseHeading tag="h1" class="text-emerald-500 dark:text-emerald-500">
