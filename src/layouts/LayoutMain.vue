@@ -11,7 +11,7 @@ import DarkLightToggle from "../components/DarkLightToggle.vue";
     <header class="flex place-items-center">
       <img alt="Vue logo" class="logo mr-4" src="../assets/logo.svg" width="100" height="100" />
 
-      <div class="flex flex-col [&>*]:my-2">
+      <div class="flex flex-col [&>*]:my-2 greetings">
         <BaseHeading tag="h1" class="text-emerald-500 dark:text-emerald-500">
           {{ $t("hello_world.title") }}
         </BaseHeading>
