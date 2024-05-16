@@ -1,0 +1,25 @@
+{
+  "menu": {
+    "home": "Home",
+    "components": "Components",
+    "guestbook": "Guestbook"
+  },
+  "hello_world": {
+    "title": "Hello World!",
+    "successfully_created": "You’ve successfully created a project with",
+    "whats_next": "What's next?"
+  },
+  "onboard": {
+    "documentation": "Documentation",
+    "tooling": "Tooling",
+    "ecosystem": "Ecosystem",
+    "community": "Community",
+    "support": "Support Vue"
+  },
+  "about": {
+    "description": "This is an about page"
+  },
+  "guestbook": {
+    "name": "Guestbook"
+  }
+}
