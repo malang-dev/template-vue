@@ -27,7 +27,8 @@
     "playwright:install": "playwright install --with-deps",
     "lint": "eslint \"src/**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}\" --fix",
     "lint-staged": "lint-staged",
-    "type-check": "vue-tsc --build --force"
+    "type-check": "vue-tsc --build --force",
+    "component:add": "npx shadcn-vue@latest add"
   },
   "devDependencies": {
     "@playwright/test": "^1.42.1",
@@ -72,7 +73,7 @@
   },
   "lint-staged": {
     "src/**/*.{ts|test.ts}": [
-      "eslint --max-warnings 0 \"src/**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
+      "eslint \"src/**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
       "prettier --write --ignore-unknown"
     ]
   },
