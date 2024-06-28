@@ -1,86 +1,82 @@
 <script setup lang="ts">
-import BaseIcon from "../components/Icons/BaseIcon.vue";
-import OnboardItem from "../components/OnboardItem.vue";
+import UserAuthForm from "@/components/UserAuthForm.vue";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/utils/cn";
 </script>
 
 <template>
-  <main class="flex place-items-center">
-    <div class="welcome flex flex-col relative">
-      <OnboardItem :title="$t('onboard.documentation')">
-        <template #icon>
-          <BaseIcon name="IconDocumentation" class="text-gray-400" />
-        </template>
+  <div class="md:hidden">
+    <VPImage
+      alt="Authentication"
+      width="1280"
+      height="1214"
+      class="block"
+      :image="{
+        dark: '/examples/authentication-dark.png',
+        light: '/examples/authentication-light.png',
+      }"
+    />
+  </div>
 
-        Vue’s <a href="https://vuejs.org/">official documentation</a> provides you with all
-        information you need to get started.
-      </OnboardItem>
-
-      <OnboardItem :title="$t('onboard.tooling')">
-        <template #icon>
-          <BaseIcon name="IconTooling" class="text-gray-400 !w-6" />
-        </template>
-
-        This project is served and bundled with
-        <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>.
-        The recommended IDE setup is
-        <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-        <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>.
-        If you need to test your components and web pages, check out
-        <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-        <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
-          >Cypress Component Testing</a
-        >. <br />
-        More instructions are available in <code>README.md</code>.
-      </OnboardItem>
-
-      <OnboardItem :title="$t('onboard.ecosystem')">
-        <template #icon>
-          <BaseIcon name="IconEcosystem" class="text-gray-400" />
-        </template>
-
-        Get official tools and libraries for your project:
-        <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
-        <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>,
-        <a href="https://test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a>,
-        and
-        <a href="https://github.com/vuejs/devtools" target="_blank" rel="noopener">Vue Dev Tools</a
-        >. If you need more resources, we suggest paying
-        <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener"
-          >Awesome Vue</a
+  <div
+    class="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0"
+  >
+    <a
+      href="/examples/authentication"
+      :class="
+        cn(buttonVariants({ variant: 'ghost' }), 'absolute right-4 top-4 md:right-8 md:top-8')
+      "
+    >
+      Login
+    </a>
+    <div class="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
+      <div class="absolute inset-0 bg-zinc-900" />
+      <div class="relative z-20 flex items-center text-lg font-medium">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          class="mr-2 h-6 w-6"
         >
-        a visit.
-      </OnboardItem>
-
-      <OnboardItem :title="$t('onboard.community')">
-        <template #icon>
-          <BaseIcon name="IconCommunity" class="text-gray-400" />
-        </template>
-
-        Got stuck? Ask your question on Vue Land, our official Discord server, or StackOverflow. You
-        should also subscribe to our mailing list and follow the official @vuejs twitter account for
-        latest news in the Vue world.
-      </OnboardItem>
-
-      <OnboardItem :title="$t('onboard.support')">
-        <template #icon>
-          <BaseIcon name="IconSupport" class="text-gray-400" />
-        </template>
-
-        As an independent project, Vue relies on community backing for its sustainability. You can
-        help us by becoming a sponsor.
-      </OnboardItem>
+          <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
+        </svg>
+        Acme Inc
+      </div>
+      <div class="relative z-20 mt-auto">
+        <blockquote class="space-y-2">
+          <p class="text-lg">
+            &ldquo;This library has saved me countless hours of work and helped me deliver stunning
+            designs to my clients faster than ever before.&rdquo;
+          </p>
+          <footer class="text-sm">Sofia Davis</footer>
+        </blockquote>
+      </div>
     </div>
-  </main>
+    <div class="lg:p-8">
+      <div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+        <div class="flex flex-col space-y-2 text-center">
+          <h1 class="text-2xl font-semibold tracking-tight">Create an account</h1>
+          <p class="text-sm text-muted-foreground">Enter your email below to create your account</p>
+        </div>
+        <UserAuthForm />
+        <p class="px-8 text-center text-sm text-muted-foreground">
+          By clicking continue, you agree to our
+          <a href="/terms" class="underline underline-offset-4 hover:text-primary">
+            Terms of Service
+          </a>
+          and
+          <a href="/privacy" class="underline underline-offset-4 hover:text-primary">
+            Privacy Policy
+          </a>
+          .
+        </p>
+      </div>
+    </div>
+  </div>
 </template>
 
-<style scoped>
-.welcome::before {
-  @apply absolute;
-  @apply border-[1px];
-  @apply border-gray-200;
-  content: "";
-  height: 85%;
-  left: -4.5rem;
-  top: 3.75rem;
-}
-</style>
+<style scoped></style>

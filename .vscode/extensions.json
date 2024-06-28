@@ -7,6 +7,7 @@
     "vivaxy.vscode-conventional-commits",
     "Vue.volar",
     "sdras.vue-vscode-snippets",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "Selemondev.shadcn-vue"
   ]
 }

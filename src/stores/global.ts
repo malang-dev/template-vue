@@ -1,5 +1,5 @@
+import { IsEmpty } from "@/utils/is-empty";
 import { defineStore } from "pinia";
-import { IsEmpty } from "../utils/is-empty";
 
 interface Locale {
   code: string;
