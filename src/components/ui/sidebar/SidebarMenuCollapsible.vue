@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ChevronDown, Dot, LucideIcon } from "lucide-vue-next";
+import { ChevronDown, Dot, icons } from "lucide-vue-next";
 import { computed, ref } from "vue";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -13,20 +13,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { DropdownMenuArrow } from "radix-vue";
+import { SidebarMenu } from ".";
 
-type Submenu = {
-  href: string;
-  label: string;
-  active: boolean;
-};
-
-interface SidebarMenuCollapsibleProps {
-  icon: LucideIcon;
-  label: string;
-  active: boolean;
-  submenus: Submenu[];
-  isOpen: boolean | undefined;
-}
+type SidebarMenuCollapsibleProps = SidebarMenu & { isOpen: boolean };
 
 const props = defineProps<SidebarMenuCollapsibleProps>();
 const isSubmenuActive = computed(() => props.submenus.some((submenu) => submenu.active));
@@ -44,7 +33,7 @@ function setIsCollapsed(value: boolean) {
         <div class="w-full items-center flex justify-between">
           <div class="flex items-center">
             <span class="mr-4">
-              <component :is="props.icon" class="w-4" />
+              <component :is="icons[props.icon]" class="w-4" />
             </span>
             <p
               :class="[
@@ -104,7 +93,7 @@ function setIsCollapsed(value: boolean) {
               <div class="w-full items-center flex justify-between">
                 <div class="flex items-center">
                   <span :class="[isOpen === false ? '' : 'mr-4']">
-                    <component :is="props.icon" class="w-4" />
+                    <component :is="icons[props.icon]" class="w-4" />
                   </span>
                   <p
                     :class="[

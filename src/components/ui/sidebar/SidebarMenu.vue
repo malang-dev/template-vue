@@ -3,92 +3,18 @@ import { cn } from "@/utils/classname";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import {
-  Bookmark,
-  Ellipsis,
-  LayoutGrid,
-  LogOut,
-  Settings,
-  SquarePen,
-  Users,
-} from "lucide-vue-next";
+import { Ellipsis, icons, LogOut } from "lucide-vue-next";
 import SidebarMenuCollapsible from "./SidebarMenuCollapsible.vue";
+import { useSidebarStore } from "@/stores/use-sidebar";
+import { onMounted } from "vue";
 
-interface SidebarMenuProps {
-  isOpen: boolean;
-}
-
+type SidebarMenuProps = { isOpen: boolean };
 const props = defineProps<SidebarMenuProps>();
-const menuList = [
-  {
-    groupLabel: "",
-    menus: [
-      {
-        href: "/",
-        label: "Dashboard",
-        active: true,
-        icon: LayoutGrid,
-        submenus: [],
-      },
-    ],
-  },
-  {
-    groupLabel: "Contents",
-    menus: [
-      {
-        href: "",
-        label: "Posts",
-        active: false,
-        icon: SquarePen,
-        submenus: [
-          {
-            href: "/",
-            label: "All Posts",
-            active: false,
-          },
-          {
-            href: "/",
-            label: "New Post",
-            active: false,
-          },
-        ],
-      },
-      {
-        href: "/",
-        label: "Categories",
-        active: false,
-        icon: Bookmark,
-        submenus: [],
-      },
-      {
-        href: "/",
-        label: "Tags",
-        active: false,
-        icon: Bookmark,
-        submenus: [],
-      },
-    ],
-  },
-  {
-    groupLabel: "Settings",
-    menus: [
-      {
-        href: "/",
-        label: "Users",
-        active: false,
-        icon: Users,
-        submenus: [],
-      },
-      {
-        href: "/",
-        label: "Account",
-        active: false,
-        icon: Settings,
-        submenus: [],
-      },
-    ],
-  },
-];
+
+const sidebar = useSidebarStore();
+onMounted(function () {
+  sidebar.loadMenu();
+});
 </script>
 
 <template>
@@ -98,7 +24,7 @@ const menuList = [
         class="flex flex-col min-h-[calc(100vh-48px-36px-16px-32px)] lg:min-h-[calc(100vh-32px-40px-32px)] items-start space-y-1 px-2"
       >
         <li
-          v-for="(menuItem, index) in menuList"
+          v-for="(menuItem, index) in sidebar.getMenuList"
           :key="index"
           :class="cn('w-full', menuItem.groupLabel ? 'pt-5' : '')"
         >
@@ -136,7 +62,7 @@ const menuList = [
                     >
                       <RouterLink :to="submenu.href">
                         <span :class="cn(props.isOpen === false ? '' : 'mr-4')">
-                          <component :is="submenu.icon" class="w-4" />
+                          <component :is="icons[submenu.icon]" class="w-4" />
                         </span>
                         <p
                           :class="
