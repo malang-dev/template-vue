@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/utils/cn";
+import { cn } from "@/utils/classname";
 import { ref } from "vue";
 
 import { Loader2, Github } from "lucide-vue-next";
+import { Label } from "@/components/ui/label";
 
 const isLoading = ref(false);
 async function onSubmit(event: Event) {
@@ -18,11 +19,11 @@ async function onSubmit(event: Event) {
 </script>
 
 <template>
-  <div :class="cn('grid gap-6', $attrs.class ?? '')">
+  <div :class="cn('grid gap-3', $attrs.class ?? '')">
     <form @submit="onSubmit">
-      <div class="grid gap-2">
+      <div class="grid gap-3">
         <div class="grid gap-1">
-          <Label class="sr-only" for="email"> Email </Label>
+          <Label for="email"> Email </Label>
           <Input
             id="email"
             placeholder="name@example.com"
@@ -30,27 +31,15 @@ async function onSubmit(event: Event) {
             auto-capitalize="none"
             auto-complete="email"
             auto-correct="off"
+            autofocus
             :disabled="isLoading"
           />
         </div>
         <Button :disabled="isLoading">
           <Loader2 v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
-          Sign In with Email
+          Register with Email
         </Button>
       </div>
     </form>
-    <div class="relative">
-      <div class="absolute inset-0 flex items-center">
-        <span class="w-full border-t" />
-      </div>
-      <div class="relative flex justify-center text-xs uppercase">
-        <span class="bg-background px-2 text-muted-foreground"> Or continue with </span>
-      </div>
-    </div>
-    <Button variant="outline" type="button" :disabled="isLoading">
-      <Loader2 v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
-      <Github v-else class="mr-2 h-4 w-4" />
-      GitHub
-    </Button>
   </div>
 </template>
