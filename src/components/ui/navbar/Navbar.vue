@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Menu, PanelsTopLeft } from "lucide-vue-next";
 import { Button } from "@/components/ui/button";
-import { useSidebarStore } from "@/stores/use-sidebar";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
 import SidebarMenu from "../sidebar/SidebarMenu.vue";
 
@@ -10,7 +9,6 @@ interface NavbarProps {
 }
 
 const props = defineProps<NavbarProps>();
-const sidebar = useSidebarStore();
 </script>
 
 <template>
@@ -34,7 +32,7 @@ const sidebar = useSidebarStore();
                 </RouterLink>
               </Button>
             </SheetHeader>
-            <SidebarMenu :is-open="sidebar.isOpen" />
+            <SidebarMenu :is-open="true" />
           </SheetContent>
         </Sheet>
 
