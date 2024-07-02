@@ -1,11 +1,7 @@
-<script setup lang="ts">
-import { Sidebar } from "@/components/ui/sidebar";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div>
-    <Sidebar />
-  </div>
+  <h1>Home View</h1>
 </template>
 
 <style scoped></style>
