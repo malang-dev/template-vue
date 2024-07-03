@@ -2,7 +2,7 @@
 import { Menu, PanelsTopLeft } from "lucide-vue-next";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
-import { SidebarMenu } from "@/components/ui/sidebar";
+import { default as SidebarMenu } from "@/components/ui/sidebar/SidebarMenu.vue";
 
 interface NavbarProps {
   title: string;
