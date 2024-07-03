@@ -1,3 +1,5 @@
+const { rules } = require("eslint-config-prettier");
+
 /* eslint-env node */
 require("@rushstack/eslint-patch/modern-module-resolution");
 
@@ -20,4 +22,7 @@ module.exports = {
   ],
   root: true,
   ignorePatterns: [".eslintrc.cjs", "dist", "node_modules"],
+  rules: {
+    "vue/multi-word-component-names": "off",
+  },
 };

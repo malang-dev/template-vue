@@ -1,6 +1,8 @@
+import LayoutAuth from "@/layouts/LayoutAuth.vue";
+import LayoutMain from "@/layouts/LayoutMain.vue";
+import HomeView from "@/views/HomeView.vue";
+import UnautorizedView from "@/views/UnautorizedView.vue";
 import { createRouter, createWebHistory } from "vue-router";
-import LayoutMain from "../layouts/LayoutMain.vue";
-import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,20 +10,21 @@ const router = createRouter({
     {
       path: "/",
       component: LayoutMain,
-      children: [{ path: "", name: "home", component: HomeView }],
-    },
-    {
-      path: "/components",
-      component: LayoutMain,
       children: [
-        { path: "", name: "about", component: () => import("../views/ComponentView.vue") },
+        { path: "", name: "home", component: HomeView },
+        { path: "unautorized", name: "unautorized", component: UnautorizedView },
       ],
     },
     {
-      path: "/guestbook",
-      component: LayoutMain,
+      path: "/auth",
+      component: LayoutAuth,
       children: [
-        { path: "", name: "guestbook", component: () => import("../views/GuestbookView.vue") },
+        { path: "login", name: "login", component: () => import("@/views/LoginView.vue") },
+        {
+          path: "register",
+          name: "register",
+          component: () => import("@/views/RegisterView.vue"),
+        },
       ],
     },
   ],
