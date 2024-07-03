@@ -2,7 +2,7 @@
 import { Menu, PanelsTopLeft } from "lucide-vue-next";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
-import SidebarMenu from "../sidebar/SidebarMenu.vue";
+import { SidebarMenu } from "@/components/ui/sidebar";
 
 interface NavbarProps {
   title: string;
@@ -39,8 +39,8 @@ const props = defineProps<NavbarProps>();
         <h1 class="font-bold">{{ props.title }}</h1>
       </div>
       <div class="flex flex-1 items-center space-x-2 justify-end">
-        <ModeToggle />
-        <UserNav />
+        <!-- <ModeToggle />
+        <UserNav /> -->
       </div>
     </div>
   </header>
