@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
+import { DarkModeToggle } from "@/components/ui/dark-mode";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
 import { default as SidebarMenu } from "@/components/ui/sidebar/SidebarMenu.vue";
 import { Icon } from "@iconify/vue";
@@ -39,8 +40,7 @@ const props = defineProps<NavbarProps>();
         <h1 class="font-bold">{{ props.title }}</h1>
       </div>
       <div class="flex flex-1 items-center space-x-2 justify-end">
-        <!-- <ModeToggle />
-        <UserNav /> -->
+        <DarkModeToggle />
       </div>
     </div>
   </header>
