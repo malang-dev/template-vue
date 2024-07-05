@@ -10,10 +10,7 @@ const router = createRouter({
     {
       path: "/",
       component: LayoutMain,
-      children: [
-        { path: "", name: "home", component: HomeView },
-        { path: "unautorized", name: "unautorized", component: UnautorizedView },
-      ],
+      children: [{ path: "", name: "home", component: HomeView }],
     },
     {
       path: "/auth",
@@ -27,6 +24,7 @@ const router = createRouter({
         },
       ],
     },
+    { path: "/unautorized", name: "unautorized", component: UnautorizedView },
   ],
 });
 

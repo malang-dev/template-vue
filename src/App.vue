@@ -11,5 +11,7 @@ onMounted(function () {
 </script>
 
 <template>
-  <RouterView />
+  <div id="app">
+    <RouterView />
+  </div>
 </template>
