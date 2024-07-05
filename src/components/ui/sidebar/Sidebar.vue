@@ -3,8 +3,8 @@ import { cn } from "@/utils/classname";
 import { Button } from "@/components/ui/button";
 import SidebarToggle from "./SidebarToggle.vue";
 import SidebarMenu from "./SidebarMenu.vue";
-import { PanelsTopLeft } from "lucide-vue-next";
 import { useSidebarStore } from "@/stores/use-sidebar";
+import { Icon } from "@iconify/vue";
 
 const sidebar = useSidebarStore();
 </script>
@@ -33,7 +33,7 @@ const sidebar = useSidebarStore();
         asChild
       >
         <RouterLink to="/" class="flex items-center gap-2">
-          <PanelsTopLeft class="w-6 h-6 mr-1" />
+          <Icon icon="lucide:panels-top-left" class="w-6 h-6 mr-1" />
           <h1
             :class="
               cn(

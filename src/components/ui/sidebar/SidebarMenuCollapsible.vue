@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ChevronDown, Dot, icons } from "lucide-vue-next";
 import { computed, ref } from "vue";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -14,6 +13,7 @@ import {
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { DropdownMenuArrow } from "radix-vue";
 import { SidebarMenu } from ".";
+import { Icon } from "@iconify/vue";
 
 type SidebarMenuCollapsibleProps = SidebarMenu & { isOpen: boolean };
 
@@ -33,7 +33,7 @@ function setIsCollapsed(value: boolean) {
         <div class="w-full items-center flex justify-between">
           <div class="flex items-center">
             <span class="mr-4">
-              <component :is="icons[props.icon]" class="w-4" />
+              <Icon :icon="props.icon" class="w-4" />
             </span>
             <p
               :class="[
@@ -50,7 +50,7 @@ function setIsCollapsed(value: boolean) {
               props.isOpen ? 'translate-x-0 opacity-100' : '-translate-x-96 opacity-0',
             ]"
           >
-            <ChevronDown class="w-4 transition-transform duration-200" />
+            <Icon icon="lucide:chevron-down" class="w-4 transition-transform duration-200" />
           </div>
         </div>
       </Button>
@@ -66,7 +66,7 @@ function setIsCollapsed(value: boolean) {
         >
           <RouterLink :to="submenu.href">
             <span class="mr-4 ml-2">
-              <Dot class="w-4" />
+              <Icon icon="lucide:dot" class="w-4" />
             </span>
             <p
               :class="[
@@ -93,7 +93,7 @@ function setIsCollapsed(value: boolean) {
               <div class="w-full items-center flex justify-between">
                 <div class="flex items-center">
                   <span :class="[isOpen === false ? '' : 'mr-4']">
-                    <component :is="icons[props.icon]" class="w-4" />
+                    <Icon :icon="props.icon" class="w-4" />
                   </span>
                   <p
                     :class="[

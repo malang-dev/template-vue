@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/utils/classname";
 import { ref } from "vue";
-import { Loader2 } from "lucide-vue-next";
 
 const isLoading = ref(false);
 async function onSubmit(event: Event) {
@@ -58,7 +57,7 @@ async function onSubmit(event: Event) {
       </div>
     </div>
     <Button variant="outline" type="button" class="justify-start" :disabled="isLoading">
-      <Loader2 v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
+      <Icon icon="lucide:loader-circle" v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
       <img
         v-else
         src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg"
@@ -67,7 +66,7 @@ async function onSubmit(event: Event) {
       Continue with GitHub
     </Button>
     <Button variant="outline" type="button" class="justify-start" :disabled="isLoading">
-      <Loader2 v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
+      <Icon icon="lucide:loader-circle" v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
       <img
         v-else
         src="https://www.svgrepo.com/show/303108/google-icon-logo.svg"
@@ -76,7 +75,7 @@ async function onSubmit(event: Event) {
       Continue with Google
     </Button>
     <Button variant="outline" type="button" class="justify-start" :disabled="isLoading">
-      <Loader2 v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
+      <Icon icon="lucide:loader-circle" v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
       <img
         v-else
         src="https://cdn.worldvectorlogo.com/logos/microsoft-5.svg"

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Menu, PanelsTopLeft } from "lucide-vue-next";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
 import { default as SidebarMenu } from "@/components/ui/sidebar/SidebarMenu.vue";
+import { Icon } from "@iconify/vue";
 
 interface NavbarProps {
   title: string;
@@ -20,14 +20,14 @@ const props = defineProps<NavbarProps>();
         <Sheet>
           <SheetTrigger class="lg:hidden" as-child>
             <Button variant="outline" class="mr-3 p-3 lg:hidden">
-              <Menu class="w-5" />
+              <Icon icon="lucide:menu" class="w-5" />
             </Button>
           </SheetTrigger>
           <SheetContent class="sm:w-80 px-3 h-full flex flex-col" side="left">
             <SheetHeader>
               <Button class="flex justify-center items-center pb-2 pt-1" variant="link" as-child>
                 <RouterLink to="/" class="flex items-center gap-2">
-                  <PanelsTopLeft class="w-6 h-6 mr-1" />
+                  <Icon icon="lucide:panels-top-left" class="w-6 h-6 mr-1" />
                   <h1 class="font-bold text-lg">Brand</h1>
                 </RouterLink>
               </Button>
