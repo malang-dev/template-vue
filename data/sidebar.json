@@ -1,0 +1,50 @@
+[
+  {
+    "groupLabel": "",
+    "menus": [
+      {
+        "href": "/",
+        "label": "Dashboard",
+        "active": true,
+        "icon": "lucide:layout-grid",
+        "submenus": []
+      }
+    ]
+  },
+  {
+    "groupLabel": "Contents",
+    "menus": [
+      {
+        "href": "",
+        "label": "Posts",
+        "active": false,
+        "icon": "lucide:square-pen",
+        "submenus": [
+          { "href": "/", "label": "All Posts", "active": false },
+          { "href": "/", "label": "New Post", "active": false }
+        ]
+      },
+      {
+        "href": "/",
+        "label": "Categories",
+        "active": false,
+        "icon": "lucide:bookmark",
+        "submenus": []
+      },
+      { "href": "/", "label": "Tags", "active": false, "icon": "lucide:tag", "submenus": [] }
+    ]
+  },
+  {
+    "groupLabel": "Settings",
+    "menus": [
+      { "href": "/", "label": "Users", "active": false, "icon": "lucide:users", "submenus": [] },
+      {
+        "href": "/",
+        "label": "Account",
+        "active": false,
+        "icon": "lucide:settings",
+        "submenus": []
+      }
+    ]
+  }
+]
