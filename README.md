@@ -52,3 +52,4 @@ Inspiration, code snippets, icon, etc.
 - [Template Typescript](https://github.com/foxglove/template-typescript) by Foxglove.
 - [`shadcn` Vue](https://www.shadcn-vue.com/)
 - [`shadcn` UI Sidebar](https://github1s.com/salimi-my/shadcn-ui-sidebar) by Salimi
+- [Iconify](https://iconify.design/) by Vjacheslav Trushkin

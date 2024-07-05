@@ -1,4 +1,5 @@
 import { IsEmpty } from "@/utils/is-empty";
+import { useDark } from "@vueuse/core";
 import { defineStore } from "pinia";
 
 interface Locale {
@@ -7,8 +8,6 @@ interface Locale {
 }
 
 interface State {
-  theme: string;
-  themeList: string[];
   locale: Locale;
   localeList: Locale[];
 }
@@ -18,12 +17,9 @@ export const useGlobalStore = () => {
   const axios = window.axios;
   const i18n = window.i18n.global;
 
-  const defaultTheme = storage.getItem("theme") || "dark";
   return defineStore({
     id: "global",
     state: (): State => ({
-      theme: defaultTheme,
-      themeList: ["dark", "light"],
       locale: null,
       localeList: [
         {
@@ -37,10 +33,11 @@ export const useGlobalStore = () => {
       ],
     }),
     actions: {
-      loadTheme(theme?: string) {
-        this.theme = theme ? theme : defaultTheme;
-        storage.setItem("theme", this.theme);
-        document.querySelector("html").setAttribute("data-theme", this.theme);
+      async loadDarkMode() {
+        const isDarkMode = useDark();
+        if (isDarkMode.value) {
+          document.querySelector("html").setAttribute("class", "dark");
+        }
       },
 
       async loadLocale(localeCode?: string) {
@@ -65,8 +62,6 @@ export const useGlobalStore = () => {
       },
 
       setI18nHtmlAttribute(localeCode: string) {
-        const storage = window.storage;
-        const axios = window.axios;
         const i18n = window.i18n;
 
         i18n.global.locale = localeCode;

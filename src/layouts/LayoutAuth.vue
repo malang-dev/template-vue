@@ -44,5 +44,3 @@ import { baseURL } from "@/utils/baseurl";
     </div>
   </div>
 </template>
-
-<style scoped></style>

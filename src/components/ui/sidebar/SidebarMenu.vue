@@ -3,10 +3,10 @@ import { cn } from "@/utils/classname";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Ellipsis, icons, LogOut } from "lucide-vue-next";
 import SidebarMenuCollapsible from "./SidebarMenuCollapsible.vue";
 import { useSidebarStore } from "@/stores/use-sidebar";
 import { onMounted } from "vue";
+import { Icon } from "@iconify/vue";
 
 type SidebarMenuProps = { isOpen: boolean };
 const props = defineProps<SidebarMenuProps>();
@@ -41,7 +41,7 @@ onMounted(function () {
             <Tooltip>
               <TooltipTrigger class="w-full">
                 <div class="w-full flex justify-center items-center">
-                  <Ellipsis class="h-5 w-5" />
+                  <Icon icon="lucide:ellipsis" class="h-5 w-5" />
                 </div>
               </TooltipTrigger>
               <TooltipContent side="right">
@@ -62,7 +62,7 @@ onMounted(function () {
                     >
                       <RouterLink :to="submenu.href">
                         <span :class="cn(props.isOpen === false ? '' : 'mr-4')">
-                          <component :is="icons[submenu.icon]" class="w-4" />
+                          <Icon :icon="submenu.icon" class="w-4" />
                         </span>
                         <p
                           :class="
@@ -110,7 +110,7 @@ onMounted(function () {
                   ]"
                 >
                   <span :class="cn(props.isOpen === false ? '' : 'mr-4')">
-                    <LogOut class="w-4" />
+                    <Icon icon="lucide:log-out" class="w-4" />
                   </span>
                   <p
                     :class="

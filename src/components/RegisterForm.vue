@@ -3,9 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/utils/classname";
 import { ref } from "vue";
-
-import { Loader2, Github } from "lucide-vue-next";
 import { Label } from "@/components/ui/label";
+import { Icon } from "@iconify/vue";
 
 const isLoading = ref(false);
 async function onSubmit(event: Event) {
@@ -36,7 +35,7 @@ async function onSubmit(event: Event) {
           />
         </div>
         <Button :disabled="isLoading">
-          <Loader2 v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
+          <Icon icon="lucide:loader-circle" v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
           Register with Email
         </Button>
       </div>

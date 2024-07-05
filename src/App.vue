@@ -6,7 +6,7 @@ import { useGlobalStore } from "@/stores/use-global";
 const globalStore = useGlobalStore();
 onMounted(function () {
   globalStore.loadLocale();
-  globalStore.loadTheme();
+  globalStore.loadDarkMode();
 });
 </script>
 
