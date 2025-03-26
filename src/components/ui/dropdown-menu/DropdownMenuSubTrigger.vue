@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
+import { cn } from "@/utils/classname";
+import { Icon } from "@iconify/vue";
 import {
   DropdownMenuSubTrigger,
   type DropdownMenuSubTriggerProps,
   useForwardProps,
 } from "radix-vue";
-import { cn } from "@/utils/classname";
-import { Icon } from "@iconify/vue";
+import { type HTMLAttributes, computed } from "vue";
 
 const props = defineProps<DropdownMenuSubTriggerProps & { class?: HTMLAttributes["class"] }>();
 

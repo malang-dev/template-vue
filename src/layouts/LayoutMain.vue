@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Sidebar } from "@/components/ui/sidebar";
-import { cn } from "@/utils/classname";
-import { useSidebarStore } from "@/stores/use-sidebar";
 import { Navbar } from "@/components/ui/navbar";
+import { Sidebar } from "@/components/ui/sidebar";
+import { useSidebarStore } from "@/stores/use-sidebar";
+import { cn } from "@/utils/classname";
 
 const sidebar = useSidebarStore();
 </script>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { cn } from "@/utils/classname";
 import { Button } from "@/components/ui/button";
-import SidebarToggle from "./SidebarToggle.vue";
-import SidebarMenu from "./SidebarMenu.vue";
 import { useSidebarStore } from "@/stores/use-sidebar";
+import { cn } from "@/utils/classname";
 import { Icon } from "@iconify/vue";
+import SidebarMenu from "./SidebarMenu.vue";
+import SidebarToggle from "./SidebarToggle.vue";
 
 const sidebar = useSidebarStore();
 </script>

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { cn } from "@/utils/classname";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import SidebarMenuCollapsible from "./SidebarMenuCollapsible.vue";
 import { useSidebarStore } from "@/stores/use-sidebar";
-import { onMounted } from "vue";
+import { cn } from "@/utils/classname";
 import { Icon } from "@iconify/vue";
+import { onMounted } from "vue";
+import SidebarMenuCollapsible from "./SidebarMenuCollapsible.vue";
 
 type SidebarMenuProps = { isOpen: boolean };
 const props = defineProps<SidebarMenuProps>();

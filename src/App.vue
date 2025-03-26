@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { RouterView } from "vue-router";
-import { onMounted } from "vue";
 import { useGlobalStore } from "@/stores/use-global";
+import { onMounted } from "vue";
+import { RouterView } from "vue-router";
 
 const globalStore = useGlobalStore();
 onMounted(function () {

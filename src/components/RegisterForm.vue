@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/utils/classname";
-import { ref } from "vue";
 import { Label } from "@/components/ui/label";
+import { cn } from "@/utils/classname";
 import { Icon } from "@iconify/vue";
+import { ref } from "vue";
 
 const isLoading = ref(false);
 async function onSubmit(event: Event) {

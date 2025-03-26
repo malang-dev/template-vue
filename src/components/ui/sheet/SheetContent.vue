@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
+import { cn } from "@/utils/classname";
+import { Icon } from "@iconify/vue";
 import {
   DialogClose,
   DialogContent,
@@ -9,9 +10,8 @@ import {
   DialogPortal,
   useForwardPropsEmits,
 } from "radix-vue";
+import { type HTMLAttributes, computed } from "vue";
 import { type SheetVariants, sheetVariants } from ".";
-import { cn } from "@/utils/classname";
-import { Icon } from "@iconify/vue";
 
 interface SheetContentProps extends DialogContentProps {
   class?: HTMLAttributes["class"];

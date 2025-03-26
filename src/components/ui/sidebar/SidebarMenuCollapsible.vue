@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
@@ -11,9 +10,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { DropdownMenuArrow } from "radix-vue";
-import { SidebarMenu } from ".";
 import { Icon } from "@iconify/vue";
+import { DropdownMenuArrow } from "radix-vue";
+import { computed, ref } from "vue";
+import { SidebarMenu } from ".";
 
 type SidebarMenuCollapsibleProps = SidebarMenu & { isOpen: boolean };
 
