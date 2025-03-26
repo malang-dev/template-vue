@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/utils/classname";
+import { Icon } from "@iconify/vue";
 import { ref } from "vue";
 
 const isLoading = ref(false);
@@ -43,7 +44,7 @@ async function onSubmit(event: Event) {
           />
         </div>
         <Button :disabled="isLoading">
-          <Loader2 v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
+          <Icon icon="lucide:loader2" v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
           Login with Email
         </Button>
       </div>
