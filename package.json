@@ -28,7 +28,7 @@
     "lint": "eslint \"src/**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
     "lint-staged": "lint-staged",
     "type-check": "vue-tsc --build --force",
-    "component:add": "npx shadcn-vue@latest add"
+    "component:add": "npx shadcn-vue@radix add"
   },
   "devDependencies": {
     "@iconify-json/lucide": "^1.1.198",
