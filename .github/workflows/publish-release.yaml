@@ -23,7 +23,7 @@ jobs:
       version: ${{ env.INPUT_VENDOR_VERSION }}
       prerelease: ${{ steps.versioning.outputs.is-prerelease }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Determine release version
         id: versioning
         uses: Fresa/trunk-based-release-versioning@v0
